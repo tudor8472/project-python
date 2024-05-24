@@ -1,0 +1,17 @@
+<!-- journal/templates/journal/entry_list.html -->
+
+{% extends 'main/base.html' %}
+
+{% block title %}
+Jurnal
+{% endblock %}
+
+{% block content%}
+<h1>Journal</h1>
+    <ul>
+        {% for entry in entries %}
+            <li>{{ entry.entry_title }} - {{ entry.entry_content }} - {{ entry.entry_date }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_entry' %}">Add New Entry</a>
+{% endblock %}

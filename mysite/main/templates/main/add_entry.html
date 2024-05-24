@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Add New Entry
+{% endblock %}
+
+{% block content%}
+ <h1>Add New Entry</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Entry</button>
+    </form>
+    <a href="{% url 'entry_list' %}">Back to Entry List</a>
+{% endblock %}

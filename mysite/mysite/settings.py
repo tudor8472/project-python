@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p9*^3!)i76_wt+jv^3t_c5mq%h0*n8k0qw7903+u6a%95wjm!z'
+SECRET_KEY = 'django-insecure-fr+k*=ty5xk9ozev5kmhj5-ja^rs)h+sf9wk(xxvm^7l1w5&=r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "aplicatie"
+    # 'crispy_forms',
+    # 'crispy_bootstrap4'
+    'main.apps.MainConfig',
+    'register.apps.RegisterConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -118,7 +122,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# CRISPY_ALLOWED_TEMPLATE_PACKS = "uni_form"
+# CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = "/home"
+LOGOUT_REDIRECT_URL = "/home"
